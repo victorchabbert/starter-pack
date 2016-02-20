@@ -1,18 +1,26 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { Provider } from 'react-redux'
+import { Router } from 'react-router'
 import DevTools from './DevTools'
-import CounterApp from './app/CounterApp'
 
 export default class Root extends Component {
   render() {
-    const { store } = this.props
+    const { store, routes, history } = this.props
     return (
       <Provider store={store}>
         <div>
-          <CounterApp />
+          <Router history={history}>
+            { routes }
+          </Router>
           <DevTools />
         </div>
       </Provider>
     )
   }
+}
+
+Root.propTypes = {
+  history: PropTypes.object.isRequired,
+  routes: PropTypes.element.isRequired,
+  store: PropTypes.object.isRequired
 }
