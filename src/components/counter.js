@@ -2,7 +2,10 @@ import React, { Component, PropTypes } from 'react'
 
 class Counter extends Component {
   render() {
-    const { increment, incrementIfOdd, decrement, counter } = this.props
+    const {
+      increment, incrementIfOdd, decrement,
+      counter, incrementAsync
+    } = this.props
     return (
       <p>Clicked: {counter} times
       {' '}
@@ -10,7 +13,9 @@ class Counter extends Component {
       {' '}
       <button onClick={decrement}>-</button>
       {' '}
-      <button onClick={incrementIfOdd}>Increment if odd</button></p>
+      <button onClick={incrementIfOdd}>Increment if odd</button>
+      {' '}
+      <button onClick={incrementAsync}>Increment after 1s</button></p>
     )
   }
 }
