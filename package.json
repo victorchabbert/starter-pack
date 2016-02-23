@@ -23,7 +23,8 @@ k{
     "redux": "^3.3.0",
     "redux-devtools": "^3.1.0",
     "redux-devtools-dock-monitor": "^1.0.1",
-    "redux-devtools-log-monitor": "^1.0.4"
+    "redux-devtools-log-monitor": "^1.0.4",
+    "redux-saga": "^0.8.2"
   },
   "devDependencies": {
     "ava": "^0.12.0",

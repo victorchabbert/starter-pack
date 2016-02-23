@@ -1,9 +1,12 @@
 import { createStore, compose, applyMiddleware } from 'redux'
 import { persistState } from 'redux-devtools'
 import { syncHistory } from 'react-router-redux'
+import createSagaMiddleware from 'redux-saga'
 
 import reducer from '../reducers'
 import DevTools from '../../containers/DevTools'
+
+import rootSaga from '../sagas'
 
 function getDebugSessionKey() {
   const matches = window.location.href.match(/[?&]debug_session=([^&]+)\b/)
@@ -12,12 +15,16 @@ function getDebugSessionKey() {
 
 export default function configureStore({ initialState = {}, history }) {
   const routerMiddleware = syncHistory(history)
+  const sagaMiddleware = createSagaMiddleware(rootSaga)
 
   const store = createStore(
     reducer,
     initialState,
     compose(
-      applyMiddleware(routerMiddleware),
+      applyMiddleware(
+        routerMiddleware,
+        sagaMiddleware
+      ),
       DevTools.instrument(),
       persistState(getDebugSessionKey())
     )

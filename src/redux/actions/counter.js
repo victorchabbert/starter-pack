@@ -1,7 +1,8 @@
 import {
   INCREMENT_COUNTER,
   DECREMENT_COUNTER,
-  INCREMENT_IF_ODD
+  INCREMENT_IF_ODD,
+  INCREMENT_ASYNC
 } from '../constants/counter'
 
 export function increment() {
@@ -19,5 +20,11 @@ export function decrement() {
 export function incrementIfOdd() {
   return {
     type: INCREMENT_IF_ODD
+  }
+}
+
+export function incrementAsync() {
+  return {
+    type: INCREMENT_ASYNC
   }
 }

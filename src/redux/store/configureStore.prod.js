@@ -1,10 +1,20 @@
-import { createStore } from 'redux'
-import reducer from '../reducers'
+import { createStore, compose, applyMiddleware } from 'redux'
+import { syncHistory } from 'react-router-redux'
+import createSagaMiddleware from 'redux-saga'
 
-export default function configureStore(initialState) {
+import reducer from '../reducers'
+import rootSaga from '../sagas'
+
+export default function configureStore({ initialState = {}, history }) {
   const store = createStore(
     reducer,
-    initialState
+    initialState,
+    compose(
+      applyMiddleware(
+        createSagaMiddleware(rootSaga),
+        syncHistory(history)
+      )
+    ),
   )
 
   return store
