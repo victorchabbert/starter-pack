@@ -1,4 +1,4 @@
-k{
+{
   "name": "starter-pack",
   "version": "0.1.0",
   "description": "My react starter pack",
@@ -9,7 +9,8 @@ k{
   },
   "scripts": {
     "start": "NODE_ENV=development DEBUG=app:* node bin/server",
-    "test": "ava"
+    "test": "nyc ava",
+    "test:report": "nyc report --reporter=html"
   },
   "author": "Victor Chabbert",
   "license": "ISC",
@@ -51,9 +52,17 @@ k{
     "webpack-hot-middleware": "^2.6.4"
   },
   "ava": {
+    "files": [
+      "**/*.spec.js"
+    ],
     "failFast": true,
     "require": [
       "babel-register"
+    ]
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.spec.js"
     ]
   }
 }

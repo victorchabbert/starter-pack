@@ -3,5 +3,6 @@
   "plugins": [
     "transform-object-rest-spread",
     "transform-runtime", "add-module-exports"
-  ]
+  ],
+  "ignore": "**/*.spec.js"
 }

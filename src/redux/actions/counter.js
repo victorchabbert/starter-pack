@@ -5,9 +5,10 @@ import {
   INCREMENT_ASYNC
 } from '../constants/counter'
 
-export function increment() {
+export function increment(amount = 1) {
   return {
-    type: INCREMENT_COUNTER
+    type: INCREMENT_COUNTER,
+    amount
   }
 }
 
