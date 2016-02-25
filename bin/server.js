@@ -1,4 +1,3 @@
-/* eslint array-bracket-spacing: 0 */
 require('babel-register')
 
 const server = require('../server/main')

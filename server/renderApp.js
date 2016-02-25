@@ -19,7 +19,7 @@ export default function renderApp(req, res) {
         window.__INITIAL_STATE__ = {}
       </script>
       <body>
-        <div id="app"></div>
+        <div id="app">${componentHTML}</div>
         <script type="application/javascript" src="/bundle.js"></script>
       </body>
     </head>

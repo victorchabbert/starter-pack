@@ -8,7 +8,9 @@
     "npm": "^3.0.0"
   },
   "scripts": {
-    "start": "NODE_ENV=development DEBUG=app:* node bin/server",
+    "dev": "NODE_ENV=development DEBUG=app:* node bin/server",
+    "compile": "NODE_ENV=production node bin/compile",
+    "start": "NODE_ENV=production node bin/server",
     "test": "nyc ava",
     "test:report": "nyc report --reporter=html"
   },
