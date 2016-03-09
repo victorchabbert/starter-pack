@@ -24,9 +24,6 @@
     "react-router": "^2.0.0-rc6",
     "react-router-redux": "^3.0.0",
     "redux": "^3.3.0",
-    "redux-devtools": "^3.1.0",
-    "redux-devtools-dock-monitor": "^1.0.1",
-    "redux-devtools-log-monitor": "^1.0.4",
     "redux-saga": "^0.8.2"
   },
   "devDependencies": {
@@ -49,6 +46,9 @@
     "eslint-plugin-ava": "0.0.1",
     "eslint-plugin-react": "^3.16.1",
     "nyc": "^5.6.0",
+    "redux-devtools-inspector": "^0.3.1",
+    "redux-devtools": "^3.1.0",
+    "redux-devtools-dock-monitor": "^1.0.1",
     "webpack": "^1.12.13",
     "webpack-dev-middleware": "^1.5.1",
     "webpack-hot-middleware": "^2.6.4"
